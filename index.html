@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media Uppgift</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  
+  <h1>Multimedia & JavaScript</h1>
+
+  <section>
+    <h2>Video</h2>
+    <video id="video" width="640"> 
+      <source src="media/ocean_video.mp4" type="video/mp4">
+    </video>
+
+    <button id="videoPlayBtn">Play</button> <!-- Toggle play/pause med JS -->
+  </section>
+
+  <section>
+    <h2>Audio</h2>
+    <audio id="audio">
+      <source src="media/ocean_audio.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="audioPlayBtn">Play</button> <!-- Toggle play/pause med JS här också-->
+    <input type="range" id="audioVolume" name="volume" min="0" value ="50" max="100"> <!-- Volymkontroller för audio. -->
+    <button id="audioMute">Mute</button> <!-- Skapa en mute funktion i JS!!!-->
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
