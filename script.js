@@ -90,3 +90,13 @@ function seekAudio() {
   const seekTime = (audioProgress.value / 100) * audio.duration;
   audio.currentTime = seekTime;
 }
+
+video.addEventListener("ended", () => {
+  videoPlayBtn.textContent = "Play";
+  videoPlayBtn.setAttribute("aria-label", "Play");
+});
+
+audio.addEventListener("ended", () => {
+  audioPlayBtn.textContent = "Play";
+  audioPlayBtn.setAttribute("aria-label", "Play");
+});
