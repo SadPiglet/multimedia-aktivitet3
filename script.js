@@ -75,3 +75,18 @@ function seekVideo() {
   const seekTime = (videoProgress.value / 100) * video.duration;
   video.currentTime = seekTime;
 }
+
+// Funktion för att uppdatera progress bar för audio
+audio.addEventListener("timeupdate", updateAudioProgress);
+
+function updateAudioProgress() {
+  const progress = (audio.currentTime / audio.duration) * 100;
+  audioProgress.value = progress;
+}
+
+audioProgress.addEventListener("input", seekAudio);
+
+function seekAudio() {
+  const seekTime = (audioProgress.value / 100) * audio.duration;
+  audio.currentTime = seekTime;
+}

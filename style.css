@@ -1,3 +1,31 @@
+:root {
+  --color-text: #dceaf2;
+  --color-heading: #e7f5fa;
+  --color-subheading: #b9d4df;
+
+  --color-background-dark: #071923;
+  --color-background-mid: #0b2633;
+  --color-background-light: #102f3d;
+
+  --color-section: rgba(8, 25, 34, 0.75);
+  --color-border: rgba(150, 190, 205, 0.2);
+
+  --color-button: #183b4a;
+  --color-button-hover: #245366;
+
+  --color-range: #294653;
+  --color-thumb: #9fc3d0;
+  --color-volume-thumb: #789eac;
+
+  --radius-small: 7px;
+  --radius-medium: 10px;
+  --radius-large: 14px;
+
+  --shadow-section: 0 10px 30px rgba(0, 0, 0, 0.45);
+  --shadow-video: 0 6px 20px rgba(0, 0, 0, 0.5);
+  --shadow-heading: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -8,32 +36,45 @@ body {
   padding: 2rem;
   min-height: 100vh;
   font-family: Arial, sans-serif;
-  color: #dceaf2;
+  color: var(--color-text);
   background:
-    radial-gradient(circle at 20% 20%, rgba(70, 110, 130, 0.25), transparent 35%),
-    radial-gradient(circle at 80% 80%, rgba(30, 70, 90, 0.3), transparent 40%),
-    linear-gradient(145deg, #071923, #0b2633, #102f3d);
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(70, 110, 130, 0.25),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(30, 70, 90, 0.3),
+      transparent 40%
+    ),
+    linear-gradient(
+      145deg,
+      var(--color-background-dark),
+      var(--color-background-mid),
+      var(--color-background-light)
+    );
 }
 
 h1 {
   text-align: center;
   margin-bottom: 2rem;
-  color: #e7f5fa;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+  color: var(--color-heading);
+  text-shadow: var(--shadow-heading);
 }
 
 section {
   margin-bottom: 2rem;
   padding: 1.5rem;
-  background: rgba(8, 25, 34, 0.75);
-  border: 1px solid rgba(150, 190, 205, 0.2);
-  border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  background: var(--color-section);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+  box-shadow: var(--shadow-section);
 }
 
 h2 {
   margin-top: 0;
-  color: #b9d4df;
+  color: var(--color-subheading);
 }
 
 video {
@@ -41,26 +82,88 @@ video {
   width: 100%;
   max-width: 640px;
   margin-bottom: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-video);
 }
 
 button {
   padding: 0.6rem 1rem;
   margin-right: 0.5rem;
-  border: 1px solid rgba(190, 220, 230, 0.3);
-  border-radius: 7px;
-  background: #183b4a;
-  color: #dceaf2;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-small);
+  background: var(--color-button);
+  color: var(--color-text);
   font-weight: bold;
   cursor: pointer;
 }
 
 button:hover {
-  background: #245366;
+  background: var(--color-button-hover);
 }
 
+/* Media controls */
+
 input[type="range"] {
+  appearance: none;
+  height: 6px;
+  border-radius: 10px;
+  background: var(--color-range);
+  cursor: pointer;
+}
+
+/* Progress bars */
+
+#videoProgress,
+#audioProgress {
+  display: block;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 0 1rem;
+}
+
+#videoProgress::-webkit-slider-thumb,
+#audioProgress::-webkit-slider-thumb {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-thumb);
+  border: 2px solid var(--color-text);
+  cursor: pointer;
+}
+
+#videoProgress::-moz-range-thumb,
+#audioProgress::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-thumb);
+  border: 2px solid var(--color-text);
+  cursor: pointer;
+}
+
+/* Volume */
+
+#audioVolume {
+  width: 120px;
+  height: 4px;
+  margin-left: 0.5rem;
   vertical-align: middle;
-  accent-color: #9fc3d0;
+}
+
+#audioVolume::-webkit-slider-thumb {
+  appearance: none;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--color-volume-thumb);
+  cursor: pointer;
+}
+
+#audioVolume::-moz-range-thumb {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--color-volume-thumb);
+  cursor: pointer;
 }
