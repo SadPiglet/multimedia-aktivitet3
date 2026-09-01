@@ -17,6 +17,7 @@
       <source src="media/ocean_video.mp4" type="video/mp4">
     </video>
 
+    <input type="range" id="videoProgress" min="0" max="100" value="0"> <!-- Progress bar för video. -->
     <button id="videoPlayBtn">Play</button> <!-- Toggle play/pause med JS -->
   </section>
 
@@ -26,6 +27,7 @@
       <source src="media/ocean_audio.mp3" type="audio/mpeg">
     </audio>
 
+    <input type="range" id="audioProgress" min="0" max="100" value="0"> <!-- Progress bar för audio. -->
     <button id="audioPlayBtn">Play</button> <!-- Toggle play/pause med JS här också-->
     <input type="range" id="audioVolume" name="volume" min="0" value ="50" max="100"> <!-- Volymkontroller för audio. -->
     <button id="audioMute">Mute</button> <!-- Skapa en mute funktion i JS!!!-->

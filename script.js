@@ -5,6 +5,8 @@ const videoPlayBtn = document.querySelector("#videoPlayBtn");
 const audioPlayBtn = document.querySelector("#audioPlayBtn");
 const audioVolume = document.querySelector("#audioVolume");
 const audioMute = document.querySelector("#audioMute");
+const audioProgress = document.querySelector("#audioProgress");
+const videoProgress = document.querySelector("#videoProgress");
 
 // Funktion för att spela upp videon och toggla "Pause"/"Play" samt aria-labels
 function playVideo() {
@@ -58,3 +60,18 @@ function muteAudio() {
 }
 
 audioMute.addEventListener("click", muteAudio);
+
+// Funktion för att uppdatera progress bar för video
+video.addEventListener("timeupdate", updateVideoProgress);
+
+function updateVideoProgress() {
+  const progress = (video.currentTime / video.duration) * 100;
+  videoProgress.value = progress;
+}
+
+videoProgress.addEventListener("input", seekVideo);
+
+function seekVideo() {
+  const seekTime = (videoProgress.value / 100) * video.duration;
+  video.currentTime = seekTime;
+}
