@@ -167,3 +167,12 @@ input[type="range"] {
   background: var(--color-volume-thumb);
   cursor: pointer;
 }
+
+canvas {
+  display: block;
+  width: 100%;
+  max-width: 640px;
+  margin-bottom: 1rem;
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-video);
+}
