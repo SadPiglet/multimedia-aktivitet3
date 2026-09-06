@@ -134,7 +134,7 @@ canvasBtn.addEventListener("click", () => {
 });
 
 function drawScene() {
-    // Canvas funktionalitet
+  // Canvas funktionalitet
   ctx.fillStyle = "#071923";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
