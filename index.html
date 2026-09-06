@@ -8,43 +8,49 @@
 </head>
 
 <body>
-  
-  <h1>Multimedia & JavaScript</h1>
 
-  <section>
-    <h2>Video</h2>
-    <p>A video of a stormy ocean</p>
-    <video id="video" width="640"> 
-      <source src="media/ocean_video.mp4" type="video/mp4">
-    </video>
+  <header>
+    <h1>Multimedia & JavaScript</h1>
+  </header>
 
-    <input type="range" id="videoProgress" min="0" max="100" value="0" aria-label="Video progress"> <!-- Progress bar för video. -->
-    <button id="videoPlayBtn">Play</button> <!-- Toggle play/pause med JS -->
-  </section>
+  <main>
+    <section>
+      <h2>Video</h2>
+      <p>A video of a stormy ocean</p>
+      <video id="video" width="640"> 
+        <source src="media/ocean_video.mp4" type="video/mp4">
+      </video>
 
-  <section>
-    <h2>Audio</h2>
-    <p>Audio of a stormy ocean</p>
-    <audio id="audio">
-      <source src="media/ocean_audio.mp3" type="audio/mpeg">
-    </audio>
+      <input type="range" id="videoProgress" min="0" max="100" value="0" aria-label="Video progress"> <!-- Progress bar för video. -->
+      <button id="videoPlayBtn">Play</button> <!-- Toggle play/pause med JS -->
+    </section>
 
-    <input type="range" id="audioProgress" min="0" max="100" value="0" aria-label="Audio progress"> <!-- Progress bar för audio. -->
-    <button id="audioPlayBtn">Play</button> <!-- Toggle play/pause med JS här också-->
-    <input type="range" id="audioVolume" name="volume" min="0" value ="50" max="100" aria-label="Audio volume"> <!-- Volymkontroller för audio. -->
-    <button id="audioMute">Mute</button> <!-- Skapa en mute funktion i JS!!!-->
-  </section>
+    <section>
+      <h2>Audio</h2>
+      <p>Audio of a stormy ocean</p>
+      <audio id="audio">
+        <source src="media/ocean_audio.mp3" type="audio/mpeg">
+      </audio>
 
-  <section>
-    <h2>Canvas</h2>
+      <input type="range" id="audioProgress" min="0" max="100" value="0" aria-label="Audio progress"> <!-- Progress bar för audio. -->
+      <button id="audioPlayBtn">Play</button> <!-- Toggle play/pause med JS här också-->
+      <input type="range" id="audioVolume" name="volume" min="0" value ="50" max="100" aria-label="Audio volume"> <!-- Volymkontroller för audio. -->
+      <button id="audioMute">Mute</button> <!-- Skapa en mute funktion i JS!!!-->
+    </section>
 
-    <canvas id="canvas" width="640" height="360"></canvas>
-    <button id="canvasBtn">Move the moon</button>
-  </section>
+    <section>
+      <h2>Canvas</h2>
+
+      <canvas id="canvas" width="640" height="360"></canvas>
+      <button id="canvasBtn">Move the moon</button>
+    </section>
+  </main>
 
   <footer>
     <p>SadPiglet - 2026</p>
   </footer>
+
+  
   <script src="script.js"></script>
 </body>
 </html>
